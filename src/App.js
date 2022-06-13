@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react"
+import './index.css';
+import "./App.css"
+import Header from "./components/Header"
+import Body from "./components/Body"
+import LightBox from "./components/LightBox";
+
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const[count,setCount]=useState(0);
+const [cartCount, setCartCount] = useState(0);
+
+    return ( 
+            <div className = 'App' >
+        <Header  cartCount={cartCount} setCartCount={setCartCount}/>
+        <div className="section">
+            <div className="section-1">
+ <LightBox />
+ < Body count={count} setCount={setCount} cartCount={cartCount} setCartCount={setCartCount} />
+
+            </div>
+    
+      
+
+        </div>
+        
+
+
+
+
+
+
+
+
+        </div> 
+        
+    );
 }
 
 export default App;
